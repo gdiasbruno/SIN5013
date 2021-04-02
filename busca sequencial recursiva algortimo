@@ -1,0 +1,12 @@
+function buscaSequencial(x, array) {
+  if (array.length === 0) {
+    return 'Não encontrado';
+  }
+  if ( x === array[array.length - 1]) {
+    return `Resultado ${array.indexOf(x)}`;
+  }
+  array.pop()
+  return buscaSequencial(x, array)
+}
+
+console.log(buscaSequencial(12, [1,2,3,4,5,2,6,2,7,100,12,15,19,17,22]))
