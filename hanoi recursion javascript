@@ -1,0 +1,11 @@
+function hanoi(origin, destiny, aux, diskNumber) {
+  if (diskNumber === 0 ) {
+    return -1
+  } 
+      hanoi(origin, aux, destiny, diskNumber-1)
+      console.log("Move from " + origin + " to " + destiny)
+      hanoi(aux, destiny, origin, diskNumber-1)
+ 
+}
+
+hanoi("A", "C", "B", 4)

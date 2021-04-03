@@ -1,0 +1,23 @@
+function sequential(valor, vetor, n){
+  if( n === 1 ){
+    if(vetor[0] === valor) {
+      return 0
+    } else {
+      return -1
+    }
+  } else {
+    let index = sequential(valor, vetor, n-1);
+    console.log(index)
+    if(index !== 0) {
+      if (vetor[n-1] === valor) {
+        index = n-1;
+      }
+    }
+    return index;
+  }
+}
+
+const vetor = [1,2,3];
+const n = vetor.length;
+
+console.log(sequential(1, vetor, n))

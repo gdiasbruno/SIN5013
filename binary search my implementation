@@ -1,0 +1,23 @@
+function binarySearch(value, array, higher, lower){
+  let middle = Math.floor((higher + lower)/2)
+  if (lower <= higher ){
+      if (value === array[middle]){
+        return middle
+      }
+      if (value > array[middle]){
+          lower = middle + 1
+          return binarySearch(value, array, higher, lower)
+      } else {
+          higher = middle - 1
+          return binarySearch(value, array, higher, lower)
+      }
+  } else {
+    return -1
+  }
+}
+
+const value = 8
+const array = [1,2,3,4,5,6,7,8,9,10]
+const higher = array.length - 1
+const lower = 0
+console.log(binarySearch(value, array, higher, lower))
